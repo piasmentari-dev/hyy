@@ -1,0 +1,2643 @@
+/* =====================================================
+   PUNIOLAND MAXIMUM BEAUTIFUL CHAOS
+===================================================== */
+
+body {
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            #49bdf5,
+            #9be7ff 45%,
+            #7bd34b 46%,
+            #4caf38
+        );
+
+    overflow-x: hidden;
+}
+
+
+/* =====================================================
+   SKY
+===================================================== */
+
+.sky {
+    position: fixed;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255,255,255,.5),
+            transparent 12%
+        ),
+        radial-gradient(
+            circle at 80% 30%,
+            rgba(255,255,255,.4),
+            transparent 15%
+        );
+
+    pointer-events: none;
+
+    z-index: -20;
+}
+
+
+/* =====================================================
+   STARS
+===================================================== */
+
+.stars {
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 2;
+}
+
+.stars i {
+    position: absolute;
+
+    color: white;
+
+    font-style: normal;
+
+    text-shadow:
+        0 0 5px white,
+        0 0 12px #00ffff;
+
+    animation:
+        starTwinkle
+        calc(1s + var(--delay, 0s))
+        infinite
+        alternate;
+}
+
+.stars i:nth-child(1) {
+    left: 5%;
+    top: 15%;
+}
+
+.stars i:nth-child(2) {
+    left: 14%;
+    top: 35%;
+}
+
+.stars i:nth-child(3) {
+    left: 28%;
+    top: 8%;
+}
+
+.stars i:nth-child(4) {
+    left: 42%;
+    top: 20%;
+}
+
+.stars i:nth-child(5) {
+    left: 57%;
+    top: 11%;
+}
+
+.stars i:nth-child(6) {
+    left: 67%;
+    top: 28%;
+}
+
+.stars i:nth-child(7) {
+    left: 78%;
+    top: 13%;
+}
+
+.stars i:nth-child(8) {
+    left: 91%;
+    top: 24%;
+}
+
+.stars i:nth-child(9) {
+    left: 85%;
+    top: 43%;
+}
+
+.stars i:nth-child(10) {
+    left: 73%;
+    top: 55%;
+}
+
+.stars i:nth-child(11) {
+    left: 12%;
+    top: 65%;
+}
+
+.stars i:nth-child(12) {
+    left: 32%;
+    top: 73%;
+}
+
+.stars i:nth-child(13) {
+    left: 52%;
+    top: 68%;
+}
+
+.stars i:nth-child(14) {
+    left: 68%;
+    top: 75%;
+}
+
+.stars i:nth-child(15) {
+    left: 94%;
+    top: 70%;
+}
+
+@keyframes starTwinkle {
+
+    from {
+        opacity: .25;
+        transform: scale(.6) rotate(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.5) rotate(180deg);
+    }
+}
+
+
+/* =====================================================
+   CLOUDS
+===================================================== */
+
+.cloud {
+    position: fixed;
+
+    font-size: 90px;
+
+    opacity: .85;
+
+    pointer-events: none;
+
+    z-index: 3;
+
+    filter:
+        drop-shadow(3px 5px 0 rgba(0,0,0,.1));
+
+    white-space: nowrap;
+}
+
+.cloud1 {
+    top: 18%;
+    left: -15%;
+
+    animation:
+        cloudMove1
+        28s linear infinite;
+}
+
+.cloud2 {
+    top: 32%;
+    left: -20%;
+
+    font-size: 60px;
+
+    animation:
+        cloudMove2
+        40s linear infinite;
+}
+
+.cloud3 {
+    top: 8%;
+    left: -30%;
+
+    font-size: 120px;
+
+    animation:
+        cloudMove3
+        50s linear infinite;
+}
+
+.cloud4 {
+    top: 55%;
+    left: -20%;
+
+    font-size: 70px;
+
+    animation:
+        cloudMove1
+        35s linear infinite reverse;
+}
+
+.cloud5 {
+    top: 42%;
+    left: -10%;
+
+    font-size: 50px;
+
+    animation:
+        cloudMove2
+        22s linear infinite;
+}
+
+@keyframes cloudMove1 {
+
+    from {
+        transform:
+            translateX(-20vw);
+    }
+
+    to {
+        transform:
+            translateX(130vw);
+    }
+}
+
+@keyframes cloudMove2 {
+
+    from {
+        transform:
+            translateX(-30vw)
+            scale(.8);
+    }
+
+    to {
+        transform:
+            translateX(140vw)
+            scale(1.1);
+    }
+}
+
+@keyframes cloudMove3 {
+
+    from {
+        transform:
+            translateX(-40vw);
+    }
+
+    to {
+        transform:
+            translateX(150vw);
+    }
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.tiny-url {
+    position: fixed;
+
+    top: 5px;
+    left: 8px;
+
+    color: #15556a;
+
+    font-family: Arial;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    text-shadow:
+        1px 1px white;
+
+    z-index: 500;
+}
+
+.top-title {
+    position: fixed;
+
+    top: 20px;
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    font-size: 45px;
+    font-weight: bold;
+
+    color: white;
+
+    text-shadow:
+        4px 4px #ff1493,
+        -4px -4px #00ffff,
+        0 0 20px white;
+
+    z-index: 500;
+
+    animation:
+        titleBounce
+        2s
+        infinite
+        ease-in-out;
+}
+
+@keyframes titleBounce {
+
+    0%,100% {
+        transform:
+            translateX(-50%)
+            rotate(-2deg)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translateX(-50%)
+            rotate(2deg)
+            scale(1.08);
+    }
+}
+
+.top-subtitle {
+    position: fixed;
+
+    top: 75px;
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    padding: 4px 15px;
+
+    background: #ff69b4;
+
+    color: white;
+
+    border: 3px solid white;
+
+    font-size: 13px;
+
+    z-index: 500;
+
+    animation:
+        subtitleWiggle
+        1.5s
+        infinite;
+}
+
+@keyframes subtitleWiggle {
+
+    0%,100% {
+        transform:
+            translateX(-50%)
+            rotate(-1deg);
+    }
+
+    50% {
+        transform:
+            translateX(-50%)
+            rotate(1deg);
+    }
+}
+
+
+/* =====================================================
+   TOP MARQUEE
+===================================================== */
+
+.top-scroll {
+    position: fixed;
+
+    top: 105px;
+    left: 0;
+
+    width: 100%;
+    height: 28px;
+
+    overflow: hidden;
+
+    background: #ff1493;
+
+    border-top: 3px solid yellow;
+    border-bottom: 3px solid cyan;
+
+    color: yellow;
+
+    z-index: 490;
+
+    font-family: monospace;
+}
+
+.top-scroll span {
+    display: inline-block;
+
+    white-space: nowrap;
+
+    padding-left: 100%;
+
+    line-height: 22px;
+
+    font-weight: bold;
+
+    animation:
+        scrollTop
+        14s
+        linear
+        infinite;
+}
+
+@keyframes scrollTop {
+
+    from {
+        transform:
+            translateX(0);
+    }
+
+    to {
+        transform:
+            translateX(-100%);
+    }
+}
+
+
+/* =====================================================
+   RAINBOWS
+===================================================== */
+
+.rainbow {
+    position: fixed;
+
+    font-size: 90px;
+
+    z-index: 8;
+
+    pointer-events: none;
+}
+
+.r1 {
+    left: 2%;
+    top: 15%;
+
+    animation:
+        rainbowFloat
+        3s
+        infinite
+        ease-in-out;
+}
+
+.r2 {
+    right: 2%;
+    bottom: 15%;
+
+    transform:
+        scaleX(-1);
+
+    animation:
+        rainbowFloat2
+        4s
+        infinite
+        ease-in-out;
+}
+
+@keyframes rainbowFloat {
+
+    0%,100% {
+        transform:
+            rotate(-8deg)
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            rotate(8deg)
+            translateY(-25px);
+    }
+}
+
+@keyframes rainbowFloat2 {
+
+    0%,100% {
+        transform:
+            scaleX(-1)
+            rotate(-5deg)
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            scaleX(-1)
+            rotate(5deg)
+            translateY(-30px);
+    }
+}
+
+
+/* =====================================================
+   CENTER WORLD
+===================================================== */
+
+.center-world {
+    position: absolute;
+
+    top: 155px;
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    width: 500px;
+
+    z-index: 100;
+
+    padding-bottom: 180px;
+}
+
+
+/* =====================================================
+   WIN98
+===================================================== */
+
+.win98 {
+    background: #c0c0c0;
+
+    border:
+        5px outset #eeeeee;
+
+    box-shadow:
+        10px 10px 0 rgba(0,0,0,.7);
+
+    animation:
+        windowFloat
+        4s
+        infinite
+        ease-in-out;
+}
+
+@keyframes windowFloat {
+
+    0%,100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-6px);
+    }
+}
+
+.winbar {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 6px 8px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #000080,
+            #1084d7,
+            #000080
+        );
+
+    color: white;
+
+    font-family: Arial;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+.wincontrols {
+    display: flex;
+
+    gap: 3px;
+}
+
+.wincontrols b {
+    display: inline-flex;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 20px;
+    height: 18px;
+
+    background: #c0c0c0;
+
+    color: black;
+
+    border: 2px outset white;
+}
+
+.wincontent {
+    background: white;
+
+    padding: 30px;
+
+    text-align: center;
+
+    color: black;
+}
+
+.rainbow-heading {
+    font-size: 38px;
+
+    font-weight: bold;
+
+    color: #ff1493;
+
+    text-shadow:
+        3px 3px yellow,
+        -2px -2px cyan;
+
+    animation:
+        headingWobble
+        1s
+        infinite
+        alternate;
+}
+
+@keyframes headingWobble {
+
+    from {
+        transform:
+            rotate(-2deg)
+            scale(1);
+    }
+
+    to {
+        transform:
+            rotate(2deg)
+            scale(1.06);
+    }
+}
+
+.sparkle-line {
+    margin: 12px 0;
+
+    color: #ff1493;
+
+    letter-spacing: 7px;
+
+    animation:
+        sparklePulse
+        .8s
+        infinite
+        alternate;
+}
+
+@keyframes sparklePulse {
+
+    from {
+        opacity: .4;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.cat-art pre {
+    color: #0000aa;
+
+    font-size: 18px;
+}
+
+.welcome-text {
+    line-height: 1.5;
+}
+
+.mega-button {
+    margin-top: 15px;
+
+    padding: 12px 25px;
+
+    background:
+        linear-gradient(
+            #ff8dcc,
+            #ff1493
+        );
+
+    color: white;
+
+    border:
+        5px outset #ffc1e6;
+
+    font-family:
+        "Comic Sans MS",
+        cursive;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 15px #ff69b4;
+
+    animation:
+        buttonPulse
+        1.2s
+        infinite
+        alternate;
+}
+
+@keyframes buttonPulse {
+
+    from {
+        transform:
+            scale(1);
+    }
+
+    to {
+        transform:
+            scale(1.08)
+            rotate(-1deg);
+    }
+}
+
+
+/* =====================================================
+   BLINKIES
+===================================================== */
+
+.blinkie-row {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    margin: 18px 0;
+}
+
+.blinkie {
+    padding: 5px 9px;
+
+    border: 3px solid white;
+
+    box-shadow:
+        2px 2px 0 black;
+
+    font-family: monospace;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    animation:
+        blinkie
+        .7s
+        infinite
+        alternate;
+}
+
+.pink {
+    background: #ff1493;
+    color: white;
+}
+
+.blue {
+    background: #008cff;
+    color: yellow;
+}
+
+.green {
+    background: #00a83b;
+    color: white;
+}
+
+.purple {
+    background: #8000ff;
+    color: yellow;
+}
+
+.yellow {
+    background: yellow;
+    color: red;
+}
+
+@keyframes blinkie {
+
+    from {
+        filter:
+            brightness(1);
+    }
+
+    to {
+        filter:
+            brightness(1.7);
+    }
+}
+
+
+/* =====================================================
+   PASTEL WINDOW
+===================================================== */
+
+.pastel-window {
+    margin-top: 20px;
+
+    background: #fff0fa;
+
+    border: 5px double #ff69b4;
+
+    box-shadow:
+        6px 6px 0 #ff1493;
+
+    transform:
+        rotate(-1deg);
+}
+
+.pastel-title {
+    padding: 8px;
+
+    background: #ff69b4;
+
+    color: white;
+
+    font-weight: bold;
+
+    text-align: center;
+}
+
+.pastel-content {
+    padding: 20px;
+
+    text-align: center;
+
+    color: #222;
+}
+
+.pastel-content h2 {
+    color: #ff1493;
+
+    text-shadow:
+        2px 2px white;
+}
+
+.stats-row {
+    display: flex;
+
+    justify-content: space-around;
+
+    margin-top: 15px;
+}
+
+.stats-row div {
+    padding: 10px;
+
+    background: white;
+
+    border: 3px dotted #ff69b4;
+}
+
+.stats-row strong,
+.stats-row small {
+    display: block;
+}
+
+.stats-row strong {
+    color: #ff1493;
+
+    font-size: 20px;
+}
+
+
+/* =====================================================
+   GALLERY
+===================================================== */
+
+.gallery-box {
+    margin-top: 30px;
+
+    padding: 15px;
+
+    background: rgba(255,255,255,.9);
+
+    border:
+        5px ridge #00ffff;
+}
+
+.section-heading {
+    margin-bottom: 15px;
+
+    padding: 7px;
+
+    background: #00bfff;
+
+    color: white;
+
+    text-align: center;
+
+    font-weight: bold;
+}
+
+.gallery {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 12px;
+}
+
+.photo {
+    min-height: 110px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    background: white;
+
+    border: 5px solid white;
+
+    box-shadow:
+        0 3px 8px rgba(0,0,0,.4);
+
+    font-size: 50px;
+
+    color: black;
+
+    cursor: pointer;
+
+    transition:
+        .25s;
+}
+
+.photo span {
+    font-family: monospace;
+
+    font-size: 9px;
+
+    color: #ff1493;
+}
+
+.photo:hover {
+    transform:
+        rotate(5deg)
+        scale(1.12);
+
+    z-index: 5;
+}
+
+.photo:nth-child(even) {
+    transform:
+        rotate(3deg);
+}
+
+.photo:nth-child(odd) {
+    transform:
+        rotate(-3deg);
+}
+
+
+/* =====================================================
+   OLD WINDOW
+===================================================== */
+
+.old-window {
+    margin-top: 30px;
+
+    background: #c0c0c0;
+
+    border: 5px outset white;
+
+    box-shadow:
+        7px 7px black;
+}
+
+.old-title {
+    padding: 7px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #000080,
+            #1084d7
+        );
+
+    color: white;
+
+    font-family: Arial;
+
+    font-weight: bold;
+}
+
+.old-content {
+    padding: 20px;
+
+    background: white;
+
+    text-align: center;
+
+    color: black;
+}
+
+.old-content h2 {
+    color: #ff1493;
+}
+
+.old-content input,
+.old-content textarea {
+    display: block;
+
+    width: 100%;
+
+    margin: 10px 0;
+
+    padding: 8px;
+
+    border: 2px inset #aaa;
+}
+
+.old-content textarea {
+    height: 75px;
+
+    resize: none;
+}
+
+.old-content button {
+    padding: 8px 18px;
+
+    background: #c0c0c0;
+
+    border: 4px outset white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   MUSIC
+===================================================== */
+
+.music-box {
+    margin-top: 30px;
+
+    background: #111;
+
+    border: 5px ridge #aaa;
+
+    color: #00ff00;
+
+    font-family: monospace;
+}
+
+.music-header {
+    padding: 7px;
+
+    background: #ff1493;
+
+    color: white;
+
+    text-align: center;
+
+    font-weight: bold;
+}
+
+.music-inner {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 15px;
+}
+
+.disc {
+    font-size: 50px;
+
+    animation:
+        discSpin
+        3s
+        linear
+        infinite;
+}
+
+@keyframes discSpin {
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+}
+
+.song-info {
+    flex: 1;
+}
+
+.equalizer {
+    margin-top: 5px;
+
+    color: #00ffff;
+
+    letter-spacing: 3px;
+
+    animation:
+        equalizer
+        .35s
+        infinite
+        alternate;
+}
+
+@keyframes equalizer {
+
+    from {
+        transform:
+            scaleY(.5);
+    }
+
+    to {
+        transform:
+            scaleY(1.5);
+    }
+}
+
+.music-inner button {
+    width: 40px;
+    height: 40px;
+
+    border: 4px outset white;
+
+    background: #c0c0c0;
+
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   FRIENDS
+===================================================== */
+
+.friends-box {
+    margin-top: 30px;
+
+    padding: 18px;
+
+    background: #dffff0;
+
+    border: 5px dashed #00a86b;
+
+    text-align: center;
+}
+
+.friends-box h2 {
+    color: #008050;
+}
+
+.friends {
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 15px;
+}
+
+.friends a {
+    width: 80px;
+
+    padding: 8px;
+
+    background: white;
+
+    border: 3px outset #ddd;
+
+    color: blue;
+
+    text-decoration: underline;
+
+    font-size: 11px;
+
+    transition:
+        .2s;
+}
+
+.friends a:first-letter {
+    font-size: 25px;
+}
+
+.friends a:hover {
+    background: yellow;
+
+    transform:
+        translateY(-8px)
+        rotate(4deg);
+}
+
+
+/* =====================================================
+   AWARDS
+===================================================== */
+
+.award-box {
+    margin-top: 30px;
+
+    padding: 18px;
+
+    background: #ffff9b;
+
+    border: 6px ridge gold;
+
+    text-align: center;
+}
+
+.award-box h2 {
+    color: red;
+
+    text-shadow:
+        2px 2px white;
+}
+
+.awards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap: 8px;
+
+    margin-top: 15px;
+}
+
+.awards div {
+    padding: 12px 4px;
+
+    background:
+        linear-gradient(
+            white,
+            #ddd
+        );
+
+    border: 4px outset white;
+
+    color: black;
+
+    font-size: 30px;
+
+    transition:
+        .3s;
+}
+
+.awards div:hover {
+    transform:
+        rotate(360deg)
+        scale(1.1);
+}
+
+.awards b {
+    display: block;
+
+    font-family: Arial;
+
+    font-size: 8px;
+}
+
+
+/* =====================================================
+   WEBRING
+===================================================== */
+
+.webring {
+    margin-top: 30px;
+
+    padding: 20px;
+
+    background: #000080;
+
+    color: white;
+
+    border: 5px double white;
+
+    text-align: center;
+
+    font-family: monospace;
+
+    box-shadow:
+        8px 8px black;
+}
+
+.webring div {
+    color: yellow;
+
+    font-size: 16px;
+
+    animation:
+        blinkie
+        1s
+        infinite
+        alternate;
+}
+
+.webring p {
+    margin: 12px 0;
+
+    color: #00ffff;
+}
+
+.webring small {
+    color: #ff99ff;
+}
+
+
+/* =====================================================
+   CONSTRUCTION
+===================================================== */
+
+.construction {
+    margin-top: 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    padding: 15px;
+
+    background:
+        repeating-linear-gradient(
+            -45deg,
+            yellow 0 18px,
+            black 18px 36px
+        );
+
+    border: 5px solid black;
+
+    color: red;
+
+    text-align: center;
+}
+
+.construction > div:nth-child(2) {
+    padding: 12px;
+
+    background: white;
+
+    border: 3px solid red;
+}
+
+.construction-warning {
+    font-size: 40px;
+
+    animation:
+        warning
+        .5s
+        infinite
+        alternate;
+}
+
+@keyframes warning {
+
+    from {
+        transform:
+            rotate(-10deg);
+    }
+
+    to {
+        transform:
+            rotate(10deg)
+            scale(1.15);
+    }
+}
+
+.loading {
+    margin-top: 8px;
+
+    color: #00a000;
+
+    font-family: monospace;
+
+    animation:
+        loadingBlink
+        .6s
+        infinite
+        alternate;
+}
+
+@keyframes loadingBlink {
+
+    from {
+        opacity: .4;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* =====================================================
+   FINAL
+===================================================== */
+
+.final-message {
+    margin-top: 35px;
+
+    padding: 35px 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff69b4,
+            #8000ff,
+            #00bfff
+        );
+
+    border: 7px double white;
+
+    color: white;
+
+    text-align: center;
+
+    box-shadow:
+        10px 10px black;
+}
+
+.final-message h1 {
+    margin: 15px 0;
+
+    font-size: 28px;
+
+    text-shadow:
+        3px 3px #ff1493,
+        -2px -2px #00ffff;
+
+    animation:
+        finalPulse
+        1s
+        infinite
+        alternate;
+}
+
+@keyframes finalPulse {
+
+    from {
+        transform:
+            scale(1);
+    }
+
+    to {
+        transform:
+            scale(1.08)
+            rotate(-1deg);
+    }
+}
+
+
+/* =====================================================
+   LEFT SIDEBAR
+===================================================== */
+
+.left-sidebar {
+    position: fixed;
+
+    left: 15px;
+    top: 35%;
+
+    width: 175px;
+
+    padding: 10px;
+
+    background:
+        rgba(255,255,255,.92);
+
+    border: 5px ridge #ff69b4;
+
+    box-shadow:
+        6px 6px black;
+
+    color: black;
+
+    text-align: center;
+
+    z-index: 300;
+
+    animation:
+        sideFloat
+        4s
+        infinite
+        ease-in-out;
+}
+
+@keyframes sideFloat {
+
+    0%,100% {
+        transform:
+            rotate(-1deg)
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            rotate(1deg)
+            translateY(-8px);
+    }
+}
+
+.side-header {
+    padding: 6px;
+
+    background: #ff69b4;
+
+    color: white;
+
+    font-weight: bold;
+}
+
+.side-avatar {
+    margin: 10px auto;
+
+    width: 75px;
+    height: 75px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background: #ffe3f1;
+
+    border: 3px solid #ff1493;
+
+    font-size: 48px;
+}
+
+.left-sidebar p {
+    font-size: 11px;
+
+    line-height: 1.4;
+}
+
+.online {
+    color: green;
+
+    font-family: monospace;
+
+    font-weight: bold;
+
+    animation:
+        blinkie
+        .8s
+        infinite
+        alternate;
+}
+
+.side-stats {
+    font-family: monospace;
+
+    font-size: 10px;
+
+    text-align: left;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   RIGHT SIDEBAR
+===================================================== */
+
+.right-sidebar {
+    position: fixed;
+
+    right: 15px;
+    top: 35%;
+
+    width: 155px;
+
+    padding: 10px;
+
+    background:
+        rgba(255,255,200,.94);
+
+    border: 5px ridge #00bfff;
+
+    box-shadow:
+        6px 6px black;
+
+    z-index: 300;
+
+    animation:
+        sideFloat2
+        3.5s
+        infinite
+        ease-in-out;
+}
+
+@keyframes sideFloat2 {
+
+    0%,100% {
+        transform:
+            rotate(1deg)
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            rotate(-1deg)
+            translateY(-10px);
+    }
+}
+
+.blue-header {
+    background: #008cff;
+}
+
+.right-sidebar a {
+    display: block;
+
+    margin-top: 6px;
+
+    padding: 5px;
+
+    background: white;
+
+    border: 2px dotted #ff1493;
+
+    color: blue;
+
+    font-size: 11px;
+
+    text-decoration: underline;
+
+    text-align: center;
+}
+
+.right-sidebar a:hover {
+    background: yellow;
+
+    color: red;
+
+    transform:
+        rotate(-3deg);
+}
+
+.mini-counter {
+    margin-top: 10px;
+
+    padding: 7px;
+
+    background: black;
+
+    color: #00ff00;
+
+    font-family: monospace;
+
+    font-size: 10px;
+
+    text-align: center;
+}
+
+.mini-counter strong {
+    font-size: 18px;
+}
+
+
+/* =====================================================
+   GAME HUD
+===================================================== */
+
+.game-hud {
+    position: fixed;
+
+    right: 15px;
+    top: 125px;
+
+    width: 125px;
+
+    padding: 9px;
+
+    background:
+        rgba(0,0,0,.88);
+
+    border: 4px ridge white;
+
+    color: white;
+
+    font-family: monospace;
+
+    z-index: 450;
+
+    animation:
+        hudFloat
+        2s
+        infinite
+        alternate;
+}
+
+@keyframes hudFloat {
+
+    from {
+        transform:
+            translateY(0);
+    }
+
+    to {
+        transform:
+            translateY(-5px);
+    }
+}
+
+.hearts {
+    color: red;
+
+    font-size: 17px;
+
+    text-shadow:
+        1px 1px white;
+}
+
+.hp {
+    margin-top: 5px;
+
+    color: #00ff00;
+
+    font-size: 9px;
+}
+
+.items {
+    margin-top: 7px;
+
+    line-height: 1.8;
+
+    font-size: 10px;
+}
+
+
+/* =====================================================
+   CHAOS OBJECTS
+===================================================== */
+
+.chaos-object {
+    position: fixed;
+
+    z-index: 220;
+
+    font-size: 60px;
+
+    pointer-events: none;
+
+    filter:
+        drop-shadow(3px 3px white);
+
+    will-change: transform;
+}
+
+.obj1 {
+    left: 3%;
+    top: 52%;
+    animation:
+        obj1 5s infinite;
+}
+
+.obj2 {
+    left: 27%;
+    top: 48%;
+    animation:
+        obj2 3s infinite;
+}
+
+.obj3 {
+    left: 7%;
+    bottom: 15%;
+    animation:
+        obj3 4s infinite;
+}
+
+.obj4 {
+    right: 25%;
+    top: 52%;
+    animation:
+        obj4 5s infinite;
+}
+
+.obj5 {
+    right: 4%;
+    top: 65%;
+    animation:
+        obj5 3s infinite;
+}
+
+.obj6 {
+    left: 35%;
+    top: 20%;
+    animation:
+        obj6 2s infinite;
+}
+
+.obj7 {
+    right: 8%;
+    bottom: 15%;
+    animation:
+        obj7 6s linear infinite;
+}
+
+.obj8 {
+    left: 18%;
+    top: 75%;
+    animation:
+        obj8 2s infinite;
+}
+
+.obj9 {
+    right: 35%;
+    top: 28%;
+    animation:
+        obj9 5s infinite;
+}
+
+.obj10 {
+    left: 45%;
+    bottom: 8%;
+    animation:
+        obj10 2s infinite;
+}
+
+.obj11 {
+    right: 42%;
+    bottom: 18%;
+    animation:
+        obj11 4s infinite;
+}
+
+.obj12 {
+    left: 52%;
+    top: 13%;
+    animation:
+        obj12 2.5s infinite;
+}
+
+@keyframes obj1 {
+    0%,100% {
+        transform:
+            translate(var(--mx),var(--my))
+            rotate(-10deg);
+    }
+    50% {
+        transform:
+            translate(
+                calc(var(--mx) + 35px),
+                calc(var(--my) - 30px)
+            )
+            rotate(10deg);
+    }
+}
+
+@keyframes obj2 {
+    0% {
+        transform:
+            translateY(0)
+            rotate(0);
+    }
+    50% {
+        transform:
+            translateY(-50px)
+            rotate(180deg)
+            scale(1.2);
+    }
+    100% {
+        transform:
+            translateY(0)
+            rotate(360deg);
+    }
+}
+
+@keyframes obj3 {
+    0%,100% {
+        transform:
+            translateX(0)
+            rotate(-8deg);
+    }
+    50% {
+        transform:
+            translateX(70px)
+            rotate(8deg)
+            scale(1.2);
+    }
+}
+
+@keyframes obj4 {
+    0%,100% {
+        transform:
+            translate(0,0)
+            rotate(0);
+    }
+    25% {
+        transform:
+            translate(-50px,-30px)
+            rotate(-15deg);
+    }
+    50% {
+        transform:
+            translate(-100px,20px)
+            rotate(15deg);
+    }
+    75% {
+        transform:
+            translate(-30px,50px)
+            rotate(-10deg);
+    }
+}
+
+@keyframes obj5 {
+    0%,100% {
+        transform:
+            translateY(0)
+            scale(1);
+    }
+    50% {
+        transform:
+            translateY(-45px)
+            scale(1.2)
+            rotate(12deg);
+    }
+}
+
+@keyframes obj6 {
+    0%,100% {
+        transform:
+            rotate(-15deg);
+    }
+    50% {
+        transform:
+            rotate(15deg)
+            translateY(-15px);
+    }
+}
+
+@keyframes obj7 {
+    from {
+        transform:
+            translateX(0)
+            rotate(0);
+    }
+    to {
+        transform:
+            translateX(-250px)
+            rotate(360deg);
+    }
+}
+
+@keyframes obj8 {
+    0%,100% {
+        transform:
+            translateY(0);
+    }
+    50% {
+        transform:
+            translateY(-35px)
+            rotate(20deg);
+    }
+}
+
+@keyframes obj9 {
+    0%,100% {
+        transform:
+            translate(0,0)
+            rotate(-5deg);
+    }
+    50% {
+        transform:
+            translate(-60px,40px)
+            rotate(20deg);
+    }
+}
+
+@keyframes obj10 {
+    0%,100% {
+        transform:
+            scale(1)
+            rotate(-10deg);
+    }
+    50% {
+        transform:
+            scale(1.5)
+            rotate(10deg);
+    }
+}
+
+@keyframes obj11 {
+    0% {
+        transform:
+            translate(0,0);
+    }
+    25% {
+        transform:
+            translate(-50px,-30px);
+    }
+    50% {
+        transform:
+            translate(20px,-60px);
+    }
+    75% {
+        transform:
+            translate(70px,-20px);
+    }
+    100% {
+        transform:
+            translate(0,0);
+    }
+}
+
+@keyframes obj12 {
+    0%,100% {
+        transform:
+            rotate(0)
+            scale(1);
+    }
+    50% {
+        transform:
+            rotate(180deg)
+            scale(1.4);
+    }
+}
+
+
+/* =====================================================
+   ORBITS
+===================================================== */
+
+.orbit {
+    position: fixed;
+
+    left: 50%;
+    top: 50%;
+
+    width: 260px;
+    height: 260px;
+
+    margin-left: -130px;
+    margin-top: -130px;
+
+    border:
+        2px dashed rgba(255,255,255,.35);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: 30;
+
+    animation:
+        orbit
+        8s
+        linear
+        infinite;
+}
+
+.orbit span {
+    position: absolute;
+
+    left: 50%;
+    top: -22px;
+
+    transform:
+        translateX(-50%);
+
+    font-size: 35px;
+}
+
+.orbit-a {
+    animation-duration: 7s;
+}
+
+.orbit-b {
+    width: 370px;
+    height: 370px;
+
+    margin-left: -185px;
+    margin-top: -185px;
+
+    animation:
+        orbit
+        11s
+        linear
+        infinite
+        reverse;
+}
+
+.orbit-c {
+    width: 500px;
+    height: 500px;
+
+    margin-left: -250px;
+    margin-top: -250px;
+
+    animation:
+        orbit
+        16s
+        linear
+        infinite;
+}
+
+@keyframes orbit {
+
+    from {
+        transform:
+            rotate(0);
+    }
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+}
+
+
+/* =====================================================
+   RANDOM WINDOWS
+===================================================== */
+
+.random-window {
+    position: fixed;
+
+    width: 175px;
+
+    background: #c0c0c0;
+
+    border: 4px outset white;
+
+    box-shadow:
+        5px 5px black;
+
+    color: black;
+
+    z-index: 420;
+
+    text-align: center;
+
+    animation:
+        randomWindow
+        1s
+        infinite
+        alternate;
+}
+
+.random-window div {
+    padding: 5px;
+
+    background: #000080;
+
+    color: white;
+
+    font-family: Arial;
+
+    font-weight: bold;
+
+    font-size: 11px;
+}
+
+.random-window p {
+    padding: 12px;
+
+    background: white;
+
+    margin: 0;
+}
+
+.rw1 {
+    left: 5%;
+    top: 25%;
+}
+
+.rw2 {
+    right: 4%;
+    top: 55%;
+}
+
+.rw3 {
+    left: 8%;
+    bottom: 10%;
+}
+
+@keyframes randomWindow {
+
+    from {
+        transform:
+            rotate(-2deg);
+    }
+
+    to {
+        transform:
+            rotate(2deg)
+            scale(1.03);
+    }
+}
+
+
+/* =====================================================
+   BADGES
+===================================================== */
+
+.badge {
+    position: fixed;
+
+    width: 75px;
+    height: 75px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle,
+            #ff1493,
+            #800080
+        );
+
+    color: yellow;
+
+    border:
+        4px dotted yellow;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    z-index: 430;
+
+    animation:
+        badgeSpin
+        4s
+        linear
+        infinite;
+}
+
+.badge1 {
+    left: 220px;
+    bottom: 80px;
+}
+
+.badge2 {
+    right: 220px;
+    top: 180px;
+
+    animation-duration: 5s;
+}
+
+.badge3 {
+    right: 20px;
+    bottom: 80px;
+
+    animation-duration: 3s;
+}
+
+@keyframes badgeSpin {
+
+    0% {
+        transform:
+            translate(var(--mx),var(--my))
+            rotate(0)
+            scale(1);
+    }
+
+    25% {
+        transform:
+            translate(var(--mx),var(--my))
+            rotate(90deg)
+            scale(1.15);
+    }
+
+    50% {
+        transform:
+            translate(var(--mx),var(--my))
+            rotate(180deg)
+            scale(.9);
+    }
+
+    75% {
+        transform:
+            translate(var(--mx),var(--my))
+            rotate(270deg)
+            scale(1.15);
+    }
+
+    100% {
+        transform:
+            translate(var(--mx),var(--my))
+            rotate(360deg)
+            scale(1);
+    }
+}
+
+
+/* =====================================================
+   SECRET CAT
+===================================================== */
+
+.secret-cat {
+    position: fixed;
+
+    right: 42px;
+    bottom: 40%;
+
+    z-index: 600;
+
+    font-size: 70px;
+
+    cursor: pointer;
+
+    filter:
+        drop-shadow(3px 3px white);
+
+    animation:
+        secretCat
+        1.3s
+        infinite
+        ease-in-out;
+}
+
+.secret-cat span {
+    position: absolute;
+
+    left: 50%;
+    top: -25px;
+
+    transform:
+        translateX(-50%);
+
+    width: 80px;
+
+    padding: 3px;
+
+    background: yellow;
+
+    color: red;
+
+    border: 2px solid red;
+
+    font-family: monospace;
+
+    font-size: 8px;
+
+    text-align: center;
+
+    opacity: 0;
+}
+
+.secret-cat:hover span {
+    opacity: 1;
+}
+
+@keyframes secretCat {
+
+    0%,100% {
+        transform:
+            translateY(0)
+            rotate(-8deg);
+    }
+
+    50% {
+        transform:
+            translateY(-25px)
+            rotate(8deg)
+            scale(1.1);
+    }
+}
+
+
+/* =====================================================
+   BOTTOM MARQUEE
+===================================================== */
+
+.bottom-marquee {
+    position: fixed;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 32px;
+
+    overflow: hidden;
+
+    background: #ff00aa;
+
+    border-top:
+        4px solid yellow;
+
+    color: yellow;
+
+    z-index: 900;
+
+    font-family: monospace;
+
+    font-weight: bold;
+}
+
+.bottom-marquee span {
+    display: inline-block;
+
+    white-space: nowrap;
+
+    padding-left: 100%;
+
+    line-height: 26px;
+
+    animation:
+        bottomScroll
+        12s
+        linear
+        infinite;
+}
+
+@keyframes bottomScroll {
+
+    from {
+        transform:
+            translateX(0);
+    }
+
+    to {
+        transform:
+            translateX(-100%);
+    }
+}
+
+
+/* =====================================================
+   MOUSE SPARKLE
+===================================================== */
+
+.mouse-sparkle {
+    position: fixed;
+
+    pointer-events: none;
+
+    z-index: 99999;
+
+    color: white;
+
+    font-size: 18px;
+
+    text-shadow:
+        0 0 5px #ff00ff,
+        0 0 10px cyan;
+
+    animation:
+        mouseSparkle
+        .8s
+        forwards;
+}
+
+@keyframes mouseSparkle {
+
+    0% {
+        opacity: 1;
+
+        transform:
+            translate(-50%,-50%)
+            scale(.5)
+            rotate(0);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translate(-50%,-120%)
+            scale(1.5)
+            rotate(180deg);
+    }
+}
+
+
+/* =====================================================
+   PARTICLES
+===================================================== */
+
+.particle {
+    position: fixed;
+
+    z-index: 9990;
+
+    pointer-events: none;
+
+    color: white;
+
+    font-size: 20px;
+
+    text-shadow:
+        0 0 5px #ff1493,
+        0 0 10px cyan;
+
+    animation:
+        particleUp
+        5s
+        linear
+        forwards;
+}
+
+@keyframes particleUp {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(20px)
+            scale(.3);
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translateY(-130px)
+            rotate(360deg)
+            scale(1.5);
+    }
+}
+
+
+/* =====================================================
+   HOVER EVERYTHING
+===================================================== */
+
+.photo:hover,
+.friends a:hover,
+.awards div:hover,
+.blinkie:hover,
+.mega-button:hover {
+    filter:
+        brightness(1.25)
+        saturate(1.4);
+
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    body {
+        overflow-y: auto;
+    }
+
+    .left-sidebar,
+    .right-sidebar,
+    .game-hud,
+    .random-window,
+    .badge {
+        display: none;
+    }
+
+    .top-title {
+        font-size: 27px;
+    }
+
+    .top-subtitle {
+        font-size: 10px;
+    }
+
+    .center-world {
+        width: 90%;
+
+        top: 155px;
+    }
+
+    .gallery {
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .awards {
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .chaos-object {
+        font-size: 35px;
+    }
+
+    .orbit {
+        opacity: .35;
+    }
+
+    .rainbow {
+        font-size: 50px;
+    }
+  }
